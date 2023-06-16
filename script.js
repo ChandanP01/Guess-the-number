@@ -16,8 +16,13 @@ let playGame = true
 if (playGame) {
     submit.addEventListener('click', function (e) {
         e.preventDefault()
-        const guess = parseInt(userInput.value)
-        validateGuess(guess)
+        const str_guess = userInput.value
+        if (str_guess.includes(' ')) {
+            alert("space is not allowed.")
+        } else {
+            const guess = parseInt(str_guess)
+            validateGuess(guess)
+        }
     })
 }
 
